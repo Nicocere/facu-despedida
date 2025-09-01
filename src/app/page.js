@@ -68,13 +68,10 @@ export default function Home() {
       height: 300,
     },
   ];
-  const handleAnimationComplete = () => {
-    console.log("All letters have animated!");
-  };
 
   return (
     <div className={styles.page}>
-      <div style={{ display: "flex", gap: 16, margin: '30px 0 5px' }}>
+      <div style={{ display: "flex", gap: 1, margin: '30px 0 5px' }}>
         <button
           className={`${styles.btn} ${view === "all" ? styles.activeBtn : ""}`}
           onClick={() => setView("all")}
@@ -109,7 +106,6 @@ export default function Home() {
             rootMargin="-100px"
             textAlign="center"
             tag="h1"
-            onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
             text="Tu equipo siempre estará agradecido por tu dedicación y pasión en Onboarding."
