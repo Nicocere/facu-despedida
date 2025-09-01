@@ -67,6 +67,136 @@ export default function Home() {
       url: "#",
       height: 300,
     },
+    {
+      id: "10",
+      img: "/images/image-10.jpg",
+      url: "#",
+      height: 350,
+    },
+    {
+      id: "11",
+      img: "/images/image-11.jpg",
+      url: "#",
+      height: 400,
+    },
+    {
+      id: "12",
+      img: "/images/image-12.jpg",
+      url: "#",
+      height: 300,
+    },      
+    {
+      id: "13",
+      img: "/images/image-13.jpg",
+      url: "#",
+      height: 500,
+    },      
+    {
+      id: "14",
+      img: "/images/image-14.jpg",
+      url: "#",
+      height: 350,
+    },      
+    {
+      id: "15",
+      img: "/images/image-15.jpg",
+      url: "#",
+      height: 400,
+    },      
+    {
+      id: "16",
+      img: "/images/image-16.jpg",
+      url: "#",
+      height: 300,
+    },      
+    {
+      id: "17",
+      img: "/images/image-17.jpg",
+      url: "#",
+      height: 450,
+    },      
+    {
+      id: "18",
+      img: "/images/image-18.jpg",
+      url: "#",
+      height: 400,
+    },      
+    {
+      id: "19",
+      img: "/images/image-19.jpg",
+      url: "#",
+      height: 300,
+    },
+
+    {
+      id: "20",
+      img: "/images/image-20.jpg",
+      url: "#",
+      height: 500,
+    },
+    {
+      id: "21",
+      img: "/images/image-21.jpg",
+      url: "#",
+      height: 350,
+    },      
+    {
+      id: "22",
+      img: "/images/image-22.jpg",
+      url: "#",
+      height: 400,
+    },      
+    {
+      id: "23",
+      img: "/images/image-23.jpg",
+      url: "#",
+      height: 300,
+    },      
+    {
+      id: "24",
+      img: "/images/image-24.jpg",
+      url: "#",
+      height: 450,
+    },      
+    {
+      id: "25",
+      img: "/images/image-25.jpg",
+      url: "#",
+      height: 400,
+    },      
+    {
+      id: "26",
+      img: "/images/image-26.jpg",
+      url: "#",
+      height: 300,
+    },  
+    {
+      id: "27",
+      img: "/images/image-27.jpg",
+      url: "#",
+      height: 500,
+    },  
+    {
+      id: "28",
+      img: "/images/image-28.jpg",
+      url: "#",
+      height: 350,
+    },  
+    {
+      id: "29",
+      img: "/images/image-29.jpg",
+      url: "#",
+      height: 400,
+    },  
+    {
+      id: "30",
+      img: "/images/image-30.jpg",
+      url: "#",
+      height: 300,
+    },
+
+
+
   ];
 
   return (
