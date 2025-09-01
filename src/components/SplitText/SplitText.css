@@ -1,0 +1,56 @@
+/* SplitText.css - Animaciones y estilos para SplitText */
+.split-parent {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: pre-line;
+  word-break: break-word;
+  will-change: transform, opacity;
+}
+.split-char, .split-word, .split-line {
+  display: inline-block;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.split-char {
+  transition: color 0.3s;
+  font-size: 6rem !important;
+  color: #fff !important;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-shadow: 0 2px 32px rgba(0,22,65,0.18);
+}
+.split-parent.split-animated .split-char {
+  color: #fff;
+}
+.split-parent.split-animated .split-char.active {
+  color: #7664FF;
+}
+.split-word {
+  margin-right: 0.2em;
+  font-size: 2.5rem !important;
+  color: #fff !important;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.split-line {
+  display: block;
+}
+@media (max-width: 700px) {
+  .split-char {
+    font-size: 2.5rem !important;
+  }
+  .split-word {
+    font-size: 1.2rem !important;
+  }
+}
+@media (max-width: 500px) {
+  .split-char {
+    font-size: 1.3rem !important;
+  }
+  .split-word {
+    font-size: 1rem !important;
+  }
+}

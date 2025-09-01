@@ -1,95 +1,159 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import MasonryGallery from "../components/MasonryGallery";
+import Masonry from "../components/MasonryGallery";
+import SplitText from "@/components/SplitText/SplitText";
+import "@/components/SplitText/SplitText.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [view, setView] = useState("all"); // 'all', 'text', 'images'
+
+  const items = [
+    {
+      id: "1",
+      img: "/images/image-1.jpg",
+      url: "#",
+      height: 400,
+    },
+    {
+      id: "2",
+      img: "/images/image-2.jpg",
+      url: "#",
+      height: 250,
+    },
+    {
+      id: "3",
+      img: "/images/image-3.jpg",
+      url: "#",
+      height: 600,
+    },
+    {
+      id: "4",
+      img: "/images/image-4.jpg",
+      url: "#",
+      height: 350,
+    },
+    {
+      id: "5",
+      img: "/images/image-5.jpg",
+      url: "#",
+      height: 500,
+    },
+    {
+      id: "6",
+      img: "/images/image.jpg",
+      url: "#",
+      height: 300,
+    },
+    {
+      id: "7",
+      img: "/images/image-7.jpg",
+      url: "#",
+      height: 450,
+    },
+    {
+      id: "8",
+      img: "/images/image-8.jpg",
+      url: "#",
+      height: 400,
+      main: true,
+    },
+    {
+      id: "9",
+      img: "/images/image-9.jpg",
+      url: "#",
+      height: 300,
+    },
+  ];
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
+
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+      <div style={{ display: "flex", gap: 16, margin: '30px 0 5px' }}>
+        <button
+          className={`${styles.btn} ${view === "all" ? styles.activeBtn : ""}`}
+          onClick={() => setView("all")}
+        >
+          Ver todo
+        </button>
+        <button
+          className={`${styles.btn} ${view === "text" ? styles.activeBtn : ""}`}
+          onClick={() => setView("text")}
+        >
+          Solo texto
+        </button>
+        <button
+          className={`${styles.btn} ${view === "images" ? styles.activeBtn : ""}`}
+          onClick={() => setView("images")}
+        >
+          Solo imágenes
+        </button>
+      </div>
+      {(view === "all" || view === "text") && (
+        <header className={styles.header}>
+          <SplitText
+            text="¡Gracias Facu!"
+            className={styles.title}
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            tag="h1"
+            onLetterAnimationComplete={handleAnimationComplete}
+          />
+          <SplitText
+            text="Tu equipo siempre estará agradecido por tu dedicación y pasión en Onboarding."
+            className={styles.subtitle}
+            delay={30}
+            duration={0.7}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 20 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            tag="h2"
+          />
+          <p className={styles.message}>
+            ¡Te queremos mucho! Éxitos en todo lo nuevo que emprendas. <br />
+            <span className={styles.heart}>♥</span>
+          </p>
+          <div className={styles.participants}>
+            <span>De parte de:</span>
+            <ul>
+              <li>Kelly</li>
+              <li>Ceci</li>
+              <li>Mati</li>
+              <li>Ani</li>
+              <li>Nico</li>
+            </ul>
+          </div>
+        </header>
+      )}
+      {(view === "all" || view === "images") && (
+        <Masonry
+          items={items}
+          ease="power3.out"
+          duration={0.6}
+          stagger={0.05}
+          animateFrom="bottom"
+          scaleOnHover={true}
+          hoverScale={0.95}
+          blurToFocus={true}
+          colorShiftOnHover={false}
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
     </div>
   );
 }
